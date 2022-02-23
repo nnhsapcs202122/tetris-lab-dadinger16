@@ -51,11 +51,35 @@ public final class Piece {
         //  Note: this.body[i] = points[i] copies a reference to a Point object;
         //      it does not create a new Point object with the same x and y attributes
         //      as the element in the points array
-        
+        this.body = new Point[points.length];
+        for(int i =0; i<points.length;i++)
+        {
+        this.body[i]=new Point(points[i]);
+        }
         
         // TODO: initialize the width instance variable with the width of the piece
+        int maxW = 0;
         
+        for(Point i : body){
+            if (i.getX() > maxW){
+                maxW = (int)(i.getX()+0.5);
+            }
+            
+        }
+        
+        this.width = maxW;
         // TODO: initialize the height instance variable with the height of the piece
+        
+        int maxH = 0;
+        
+        for(Point i : body){
+            if (i.getY() > maxH){
+                maxH = (int)(i.getY()+0.5);
+            }
+            
+        }
+        
+        this.height = maxH;
         
         // TODO: initialize the skirt instance variable
         //  Note: carefully read and description of the skirt in the lab document;
@@ -70,8 +94,32 @@ public final class Piece {
             // check if the y value is less than the value in the skirt 
             //      at the index equal to the x value
             // if so, update the value in the skirt
-
-    }   
+            
+            /*
+        int[][] combinations = new int[this.width][this. height];
+        
+        for(int row = 0; row<this.width; row++){
+            for(int i =0; i<body.length; i++)
+        {
+            if(body[i].getX() == row){
+                combinations[row][]
+            }
+        }
+        }*/
+        
+        ArrayList<Integer[]> combinations = new Arraylist<Integer[]>();
+        
+        int[] x-coord
+        
+for(Point i : body)
+{
+    if(i)
+    {
+        
+    }
+}
+    
+}   
 
     /**
      * Returns the width of the piece measured in blocks.
