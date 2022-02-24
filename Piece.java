@@ -62,24 +62,23 @@ public final class Piece {
         
         for(Point i : body){
             if (i.getX() > maxW){
-                maxW = (int)(i.getX()+0.5);
+                maxW = (int)(i.getX());
             }
             
         }
         
-        this.width = maxW;
+        this.width = maxW+1;
         // TODO: initialize the height instance variable with the height of the piece
         
         int maxH = 0;
         
         for(Point i : body){
             if (i.getY() > maxH){
-                maxH = (int)(i.getY()+0.5);
+                maxH = (int)(i.getY());
             }
-            
         }
         
-        this.height = maxH;
+        this.height = maxH+1;
         
         // TODO: initialize the skirt instance variable
         //  Note: carefully read and description of the skirt in the lab document;
@@ -94,32 +93,27 @@ public final class Piece {
             // check if the y value is less than the value in the skirt 
             //      at the index equal to the x value
             // if so, update the value in the skirt
-            
-            /*
-        int[][] combinations = new int[this.width][this. height];
-        
-        for(int row = 0; row<this.width; row++){
-            for(int i =0; i<body.length; i++)
+        this.skirt= new int[this.width];
+        for (int i=0; i<this.width;i++)
         {
-            if(body[i].getX() == row){
-                combinations[row][]
+            skirt[i]=this.height;
+        }
+        for (Point i : body)
+        {
+            int x= (int)(i.getX());
+            int y= (int)(i.getY());
+            if(y<skirt[x])
+            {
+                skirt[x]=y;
             }
         }
-        }*/
+    }        
         
-        ArrayList<Integer[]> combinations = new Arraylist<Integer[]>();
         
-        int[] x-coord
         
-for(Point i : body)
-{
-    if(i)
-    {
-        
-    }
-}
+
     
-}   
+    
 
     /**
      * Returns the width of the piece measured in blocks.
@@ -234,7 +228,7 @@ for(Point i : body)
         String str = "";
         
         // TODO: build a string that contains all of the attributes of this Piece
-        
+    str = " Width: " + this.width + " Height: " + this.height;
         return str;
     }
     
