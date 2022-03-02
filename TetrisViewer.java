@@ -13,7 +13,7 @@ import javax.swing.event.*;
 public class TetrisViewer
 {
     /**
-     * Creates a window, installs the JTetris or JBrainTetris, checks the
+     * Creates a window, installs the JTetris or JTetris, checks the
      *      testMode state, install the controls in the EAST.
     */
     public static void main(String[] args)

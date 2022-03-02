@@ -261,8 +261,7 @@ public final class Piece {
 
         return Piece.pieces;
     }
-
-    /**
+/**
      * Computes all the rotations of the specified Piece and connects them by
      *      their next attributes
      *      
@@ -287,6 +286,17 @@ public final class Piece {
             }
 
             // TODO: step 1: reflect across the line y = x
+            int h = 0;
+            for (Point i: rotatedPoints){
+                if(i.getY()>h){
+                    h = (int)(i.getY()+0.5);
+                }
+            }
+            h+=1; 
+            for(int i = 0;i<rotatedPoints.length;i++){
+                rotatedPoints[i].setLocation(-1*(rotatedPoints[i].getY())+h-1, rotatedPoints[i].getX());
+            }
+            
             
             // TODO: step 2: reflect across y axis
             
@@ -314,7 +324,6 @@ public final class Piece {
 
         return firstPiece;
     }
-
     /**
      * Given a string of x,y pairs ("0 0   0 1 0 2 1 0"), parses the points into
      *      a Point[] array.
