@@ -13,7 +13,7 @@ import javax.swing.event.*;
 public class TetrisViewer
 {
     /**
-     * Creates a window, installs the JTetris or JTetris, checks the
+     * Creates a window, installs the JBrainTetris or JBrainTetris, checks the
      *      testMode state, install the controls in the EAST.
     */
     public static void main(String[] args)
@@ -24,8 +24,8 @@ public class TetrisViewer
         container.setLayout(new BorderLayout());
             
         final int PIXELS = 16;
-        JTetris tetris = new JTetris((JTetris.WIDTH * PIXELS) + 2,
-                (JTetris.HEIGHT + JTetris.TOP_SPACE) * (PIXELS + 2));
+        JBrainTetris tetris = new JBrainTetris((JBrainTetris.WIDTH * PIXELS) + 2,
+                (JBrainTetris.HEIGHT + JBrainTetris.TOP_SPACE) * (PIXELS + 2));
         
         
         container.add(tetris, BorderLayout.CENTER);
